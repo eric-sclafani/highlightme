@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "HighlightMe",
+	"version": "1.0",
+	"description": "Lets you highlight text in a webpage and saves the highlights (just in session for now)",
+
+	"icons": {
+		"48": "icons/highlighter-solid-full.svg"
+	},
+
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "highlightme@gmail.com",
+			"data_collection_permissions": {
+				"required": ["none"]
+			}
+		}
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["highlighter.js"]
+		}
+	]
+}
