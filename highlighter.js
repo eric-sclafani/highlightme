@@ -1,21 +1,26 @@
-let allTextSelections = [];
-let currentSelection = null;
+let allSelections = [];
 
-const onSelectionChange = () => {
-	const selection = window.getSelection();
-	const selectedText = selection.toString();
-	if (selectedText.length > 0) {
-		currentSelection = selectedText;
-	}
-};
+// grab inner text selection coords (start and end)
+// grab inner text
+// create span with highlight
+// replace inner text selection with span
+// ???
+// profit!
 
 const onMouseUp = () => {
-	if (currentSelection != '' && currentSelection != null) {
-		allTextSelections.push(currentSelection);
-		currentSelection = null;
-		console.log('Text selections: ', allTextSelections);
+	const sel = window.getSelection();
+
+	if (sel != null && sel.toString() != '') {
+		// allSelections.push(currentSelection);
+		const start = sel.anchorOffset;
+		const end = sel.focusOffset;
+
+		if (start >= 0 && end >= 0) {
+			console.log('start: ' + start);
+			console.log('end: ' + end);
+			console.log(sel.focusNode);
+		}
 	}
 };
 
-document.addEventListener('selectionchange', onSelectionChange);
 document.addEventListener('mouseup', onMouseUp);
