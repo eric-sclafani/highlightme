@@ -1,6 +1,6 @@
 # Highlight Me!
 
-Small Firefox browser extension for simply highlighting text on a page.
+Small Firefox browser extension for simply highlighting text on a page. Nothing fancy, highlights are not saved anywhere. Just a small tool when you need temporary highlighting.
 
 ## Attributions
 
